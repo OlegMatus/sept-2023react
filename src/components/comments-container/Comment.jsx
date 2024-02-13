@@ -8,7 +8,7 @@ const Comment = ({comment}) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate('/posts', {state: {postId: id}})
+        navigate(`/posts`, {state: {postId: id}})
     }
     return (
         <div onClick={handleClick} className={css.Style}>
