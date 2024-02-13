@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+}
+.Style{
+    width: 70%;
+    background-color: lightgreen;
+    display: flex;
+    flex-Flow: column;
+    justify-content: center;
+    border: solid grey;
+    border-radius: 10px;
+    margin: 10px;
+    align-items: center;
+}

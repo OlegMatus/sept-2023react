@@ -1,8 +1,8 @@
-import {Comments} from "../components/comments-container/Comments";
 import {Outlet} from "react-router-dom";
 
-const CommentsPage = () => {
+import {Comments} from "../components/comments-container/Comments";
 
+const CommentsPage = () => {
     return (
         <div>
             <Comments/>

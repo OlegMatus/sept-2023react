@@ -1,4 +1,5 @@
-import React from 'react';
+import css from "../Component.module.css";
+
 import {useNavigate} from "react-router-dom";
 
 const Comment = ({comment}) => {
@@ -10,7 +11,7 @@ const Comment = ({comment}) => {
         navigate('/posts', {state: {postId: id}})
     }
     return (
-        <div onClick={handleClick}>
+        <div onClick={handleClick} className={css.Style}>
             <div>postId: {postId}</div>
             <div>id: {id}</div>
             <div>name: {name}</div>
