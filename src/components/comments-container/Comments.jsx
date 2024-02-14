@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react';
+
 import {commentsService} from "../../services/comments.service";
-import {urls} from "../../constants/urls";
 import {Comment} from "./Comment";
 
 const Comments = ({setCommentId}) => {
     const [comments, setComments] = useState([]);
-
 
     useEffect(() => {
         commentsService.getAll().then(({data}) => setComments(data))

@@ -22,7 +22,7 @@ const router = createBrowserRouter([
                 path: 'todos', element: <TodosPage/>
             },
             {
-                path: '/posts', element: <PostsPage/>
+                path: '/post', element: <PostsPage/>
             }
         ]
     }
