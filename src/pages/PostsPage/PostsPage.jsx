@@ -1,17 +1,17 @@
-// import {useLoaderData} from "react-router-dom";
-
-import {useParams} from "react-router-dom";
+import {Outlet, useLoaderData} from "react-router-dom";
 
 import {Posts} from "../../components/PostsContainer/Posts";
 
 const PostsPage = () => {
-    const {id} = useParams();
+    // const {id: userId} = useParams();
+    const {data} = useLoaderData();
 
-// const {data} = useLoaderData();
 
     return (
         <div>
-            <Posts userId={id}/>
+            <Outlet/>
+            <hr/>
+            <Posts posts={data}/>
         </div>
     );
 };

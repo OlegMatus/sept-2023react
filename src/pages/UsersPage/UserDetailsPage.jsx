@@ -7,22 +7,25 @@ import {usersService} from "../../services/users.service";
 const UserDetailsPage = () => {
     const [userDetails, setUserDetails] = useState(null);
     const {id} = useParams();
-    const {state} = useLocation();
+    // const {state} = useLocation();
+
+    // useEffect(() => {
+    //     if (state?.user) {
+    //         setUserDetails(state.user)
+    //     } else {
+    //         usersService.getById(id).then(({data}) => setUserDetails(data))
+    //     }
+    // }, [id, state]);
 
     useEffect(() => {
-        if (state?.user) {
-            setUserDetails(state.user)
-        } else {
-            usersService.byId(id).then(({data}) => setUserDetails(data))
-        }
-    }, [id, state]);
-
+        usersService.getById(id).then(({data}) => setUserDetails(data))
+    }, [id]);
 
     return (
         <div>
-            <Outlet/>
-            <hr/>
             {userDetails && <UserDetails userDetails={userDetails}/>}
+            <hr/>
+            <Outlet/>
         </div>
     );
 };

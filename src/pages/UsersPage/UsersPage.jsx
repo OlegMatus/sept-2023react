@@ -3,7 +3,7 @@ import {useLoaderData} from "react-router-dom";
 import {Users} from "../../components/UsersContainer/Users";
 
 const UsersPage = () => {
-let {data} = useLoaderData();
+const {data} = useLoaderData();
 
     return (
         <div>

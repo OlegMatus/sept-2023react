@@ -1,16 +1,18 @@
-import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const UserDetails = ({userDetails}) => {
 const {id, name, username, email} = userDetails;
 
+const navigate = useNavigate();
+
     return (
         <div>
+            <h1>UserDetails</h1>
             <div>id: {id}</div>
             <div>name: {name}</div>
             <div>username: {username}</div>
             <div>email: {email}</div>
-            <Link to={'posts'}>post of current user</Link>
-            {/*<div>address: {address}</div>*/}
+            <button onClick={() => navigate('posts')}>post of current user</button>
         </div>
     );
 };

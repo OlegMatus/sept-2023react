@@ -4,8 +4,11 @@ import {MainLayout} from "../layouts/MainLayout";
 import {UsersPage} from "../pages/UsersPage/UsersPage";
 import {UserDetailsPage} from "../pages/UsersPage/UserDetailsPage";
 import {PostsPage} from "../pages/PostsPage/PostsPage";
+import {PostDetailsPage} from "../pages/PostsPage/PostDetailsPage";
+
 import {usersService} from "../services/users.service";
-// import {postsService} from "../services/posts.service";
+import {postsService} from "../services/posts.service";
+import {CommentsPage} from "../pages/CommentsPage/CommentsPage";
 
 const router = createBrowserRouter([
     {
@@ -28,13 +31,15 @@ const router = createBrowserRouter([
                     {
                         path: 'posts',
                         element: <PostsPage/>,
-                        // loader: ({params: userId}) => postsService.getPostByUserId(userId)
-                    }
+                        loader: ({params: {id}}) => postsService.getPostByUserId(id)
+                    },
                 ]
             },
+            {
+                path: 'posts/:id',
+                element: <PostDetailsPage/>
+            }
         ]
-
-
     }
 ])
 
