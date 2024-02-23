@@ -8,7 +8,9 @@ const urls = {
         base: episodes,
         byId: (id) => `${episodes}/${id}`
     },
-    characters
+    characters: {
+        byIds: (ids) => `${characters}/${ids}`
+    }
 }
 
 export {

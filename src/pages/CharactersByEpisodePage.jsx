@@ -1,13 +1,12 @@
-import {useLocation} from "react-router-dom";
-
 import {Characters} from "../components";
+import {useParams} from "react-router-dom";
 
 const CharactersByEpisodePage = () => {
-        const {state: episode} = useLocation();
+        const {ids} = useParams();
 
         return (
             <div>
-                <Characters episode={episode}/>)
+                <Characters ids={ids}/>)
             </div>
         );
     }

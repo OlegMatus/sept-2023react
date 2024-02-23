@@ -2,7 +2,7 @@ import {apiService} from "./api.service";
 import {urls} from "../constants";
 
 const charactersService = {
-    getByEpisode: (id) => apiService.get(urls.characters, {params: id})
+    getByEpisode: (ids) => apiService.get(urls.characters.byIds(ids))
 };
 
 export {charactersService};

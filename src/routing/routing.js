@@ -11,18 +11,16 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Navigate to={'episode'}/>
+                element: <Navigate to={'episodes'}/>
             },
             {
-                path: 'episode',
+                path: 'episodes',
                 element: <EpisodesPage/>,
-                children: [
-                    {
-                        path: ':id/character',
-                        element: <CharactersByEpisodePage/>
-                    }
-                ]
             },
+            {
+                path: 'characters/:ids',
+                element: <CharactersByEpisodePage/>
+            }
         ]
     }
 ])
