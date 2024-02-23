@@ -8,7 +8,6 @@ import {PostDetailsPage} from "../pages/PostsPage/PostDetailsPage";
 
 import {usersService} from "../services/users.service";
 import {postsService} from "../services/posts.service";
-import {CommentsPage} from "../pages/CommentsPage/CommentsPage";
 
 const router = createBrowserRouter([
     {
