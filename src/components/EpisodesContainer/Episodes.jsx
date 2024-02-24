@@ -1,17 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useSearchParams} from "react-router-dom";
 
 import css from "../MainBlock.module.css"
 import {episodesService} from "../../services";
 import {useAppContext} from "../../hook";
-import {useStateContext} from "../../hook/useStateContext";
+import {useStateContext} from "../../hook";
 import {Episode} from "./Episode";
 
 const Episodes = () => {
-    const [episodes, setEpisodes] = useState([]);
     const [query,] = useSearchParams({page: '1'});
     const {setPrevNext} = useAppContext();
-    const {setTotalPages, error, setError} = useStateContext();
+
+    const [error, setError, episodes, setEpisodes] = useStateContext();
 
 
     useEffect(() => {
@@ -25,8 +25,7 @@ const Episodes = () => {
             }
         }
         getEpisodes()
-    }, [query, setError, setPrevNext]);
-
+    }, [query, setError, setPrevNext, setEpisodes]);
 
     return (
         <div className={css.Main}>

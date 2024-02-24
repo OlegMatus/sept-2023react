@@ -4,7 +4,7 @@ import {RouterProvider} from "react-router-dom";
 import './index.css';
 import {router} from "./routing";
 import {ContextProvider} from "./hoc";
-import {ContextState} from "./hoc/ContextState";
+import {ContextState} from "./hoc";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
