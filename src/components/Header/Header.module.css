@@ -1,0 +1,19 @@
+.Header{
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 25px;
+    text-decoration: none;
+    align-items: center;
+    background-color: black;
+    color: blueviolet;
+}
+.Header a{
+    text-decoration: none;
+}
+.Header a:hover {
+    color: greenyellow;
+}
+.Header a:active{
+    color: #c7155f;
+}
