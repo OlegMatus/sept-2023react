@@ -1,21 +1,26 @@
 import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from "react-redux";
 
 import {Car} from "./Car";
 import {carsService} from "../services";
-import {useDispatch, useSelector} from "react-redux";
 import {carsActions} from "../store";
 
 const Cars = () => {
-    const {cars} = useSelector(state => state.cars);
+    const {cars, trigger} = useSelector(state => state.cars);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        carsService.getAll().then(({data}) => dispatch(carsActions.setResponse(data)))
-    }, [dispatch]);
+        // const obj = carsActions.setCarForUpdate({name: 'Kris', age: '28'})
+        // console.log(obj);
+        carsService.getAll().then(({data}) => {
+            dispatch(carsActions.setResponse(data))
+        });
+
+    }, [trigger, dispatch]);
 
     return (
         <div>
-            {cars.map(car => <Car key={car.id} car={car}/>)}
+            {cars && cars.map((car) => <Car key={car.id} car={car}/>)}
         </div>
     );
 };
